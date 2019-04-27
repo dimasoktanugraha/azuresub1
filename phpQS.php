@@ -47,19 +47,6 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=dimassubstorage;
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
 $containerName = "blobdimas";
-
-// if (isset($_POST['submit'])) {
-// 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
-// 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
-// 	// echo fread($content, filesize($fileToUpload));
-// 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-// 	header("Location: phpQS.php");
-// }
-
-$listBlobsOptions = new ListBlobsOptions();
-$listBlobsOptions->setPrefix("");
-$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
-
 // $fileToUpload = "HelloWorld.txt";
 
 // if (!isset($_GET["Cleanup"])) {
@@ -107,20 +94,20 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 //         $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
 
 //         // List blobs.
-//         $listBlobsOptions = new ListBlobsOptions();
-//         $listBlobsOptions->setPrefix("");
+        $listBlobsOptions = new ListBlobsOptions();
+        $listBlobsOptions->setPrefix("");
 
 //         echo "These are the blobs present in the container: ";
 
-//         do{
-//             $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
-//             foreach ($result->getBlobs() as $blob)
-//             {
-//                 echo $blob->getName().": ".$blob->getUrl()."<br />";
-//             }
+        // do{
+            $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+        //     foreach ($result->getBlobs() as $blob)
+        //     {
+        //         echo $blob->getName().": ".$blob->getUrl()."<br />";
+        //     }
         
-//             $listBlobsOptions->setContinuationToken($result->getContinuationToken());
-//         } while($result->getContinuationToken());
+        //     $listBlobsOptions->setContinuationToken($result->getContinuationToken());
+        // } while($result->getContinuationToken());
 //         echo "<br />";
 
 //         // Get blob.
@@ -178,10 +165,10 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 		</form>
         <br>
 
-        <!-- <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
+        <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
             <button type="submit">Press to clean up all resources created by this sample</button>
         </form>
-        <br> -->
+        <br>
 
         <h4>Total Files : <?php echo sizeof($result->getBlobs())?></h4>
         <br>
