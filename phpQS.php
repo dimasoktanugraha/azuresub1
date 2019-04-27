@@ -43,10 +43,14 @@ use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 $connectionString = "DefaultEndpointsProtocol=https;AccountName=dimassubstorage;AccountKey=AgbqW1RBD7a3qmHILT3lSh9EEk3azTJE9DAkwg9m6gJsitbNqYqWX+DESpXkjjGHq2Hr1lX1i0RT+SDlZEDnUw==;";
 
+$containerName = "blobbdimas";
+
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$containerName = "blobdimas";
+$listBlobsOptions = new ListBlobsOptions();
+$listBlobsOptions->setPrefix("");
+$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 // $fileToUpload = "HelloWorld.txt";
 
 // if (!isset($_GET["Cleanup"])) {
@@ -165,10 +169,10 @@ $containerName = "blobdimas";
 		</form>
         <br>
 
-        <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
+        <!-- <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
             <button type="submit">Press to clean up all resources created by this sample</button>
         </form>
-        <br>
+        <br> -->
 
         <h4>Total Files : <?php echo sizeof($result->getBlobs())?></h4>
         <br>
