@@ -25,6 +25,8 @@
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
  </form>
+
+ 
  <?php
     $host = "dimassubwebappserver.database.windows.net";
     $user = "dimas";

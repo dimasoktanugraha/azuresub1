@@ -41,7 +41,7 @@ use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ACCOUNT_NAME').";AccountKey=".getenv('ACCOUNT_KEY');
+$connectionString = "DefaultEndpointsProtocol=https;AccountName=dimassubstorage;AccountKey=AgbqW1RBD7a3qmHILT3lSh9EEk3azTJE9DAkwg9m6gJsitbNqYqWX+DESpXkjjGHq2Hr1lX1i0RT+SDlZEDnUw==;";
 
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
