@@ -94,13 +94,13 @@ $containerName = "blobdimas";
 //         $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
 
 //         // List blobs.
-        $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("");
+        // $listBlobsOptions = new ListBlobsOptions();
+        // $listBlobsOptions->setPrefix("");
 
 //         echo "These are the blobs present in the container: ";
 
         // do{
-            $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+            // $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
         //     foreach ($result->getBlobs() as $blob)
         //     {
         //         echo $blob->getName().": ".$blob->getUrl()."<br />";
