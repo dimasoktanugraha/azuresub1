@@ -46,7 +46,21 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=dimassubstorage;
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "HelloWorld.txt";
+$containerName = "blobdimas";
+
+if (isset($_POST['submit'])) {
+	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
+	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+	// echo fread($content, filesize($fileToUpload));
+	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
+	header("Location: phpQS.php");
+}
+
+$listBlobsOptions = new ListBlobsOptions();
+$listBlobsOptions->setPrefix("");
+$result = $blobClient->listBlobs($containerName, $listBlobsOptions);
+
+// $fileToUpload = "HelloWorld.txt";
 
 // if (!isset($_GET["Cleanup"])) {
 //     // Create container options object.
@@ -164,10 +178,10 @@ $fileToUpload = "HelloWorld.txt";
 		</form>
         <br>
 
-        <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
+        <!-- <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
             <button type="submit">Press to clean up all resources created by this sample</button>
         </form>
-        <br>
+        <br> -->
 
         <h4>Total Files : <?php echo sizeof($result->getBlobs())?></h4>
         <br>
