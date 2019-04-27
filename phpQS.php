@@ -46,7 +46,7 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=dimassubstorage;
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$containerName = "blobdimas";
+$containerName = "blobblock";
 
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 if (isset($_POST['submit'])) {
@@ -172,7 +172,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 <title>upload gambar</title>
 </head>
 <body>
-    <form action="analyze.php" method="post" enctype="multipart/form-data">
+    <form action="phpQS.php" method="post" enctype="multipart/form-data">
 				<input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
 				<input type="submit" name="submit" value="Upload">
 	</form>
@@ -214,6 +214,6 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 </body>
 
 
-<form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
+<!-- <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
     <button type="submit">Press to clean up all resources created by this sample</button>
-</form>
+</form> -->
