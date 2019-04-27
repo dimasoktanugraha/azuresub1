@@ -48,13 +48,13 @@ $blobClient = BlobRestProxy::createBlobService($connectionString);
 
 $containerName = "blobdimas";
 
-if (isset($_POST['submit'])) {
-	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
-	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
-	// echo fread($content, filesize($fileToUpload));
-	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: phpQS.php");
-}
+// if (isset($_POST['submit'])) {
+// 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
+// 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
+// 	// echo fread($content, filesize($fileToUpload));
+// 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
+// 	header("Location: phpQS.php");
+// }
 
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
