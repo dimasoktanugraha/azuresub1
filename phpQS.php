@@ -72,7 +72,7 @@ if (!isset($_GET["Cleanup"])) {
     $createContainerOptions->addMetaData("key1", "value1");
     $createContainerOptions->addMetaData("key2", "value2");
 
-      $containerName = "blockblobs".generateRandomString();
+      $containerName = "blockdimas".generateRandomString();
 
     try {
         // Create container.
@@ -94,7 +94,7 @@ if (!isset($_GET["Cleanup"])) {
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("HelloWorld");
+        $listBlobsOptions->setPrefix("");
 
         echo "These are the blobs present in the container: ";
 
@@ -166,6 +166,37 @@ else
         <form method="post" action="phpQS.php?Cleanup&containerName=<?php echo $containerName; ?>">
             <button type="submit">Press to clean up all resources created by this sample</button>
         </form>
+        <table >
+			<thead>
+				<tr>
+					<th>File Name</th>
+					<th>File URL</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				do {
+					foreach ($result->getBlobs() as $blob)
+					{
+						?>
+						<tr>
+							<td><?php echo $blob->getName() ?></td>
+							<td><?php echo $blob->getUrl() ?></td>
+							<td>
+								<form action="computervision.php" method="post">
+									<input type="hidden" name="url" value="<?php echo $blob->getUrl()?>">
+									<input type="submit" name="submit" value="Analyze!" class="btn btn-primary">
+								</form>
+							</td>
+						</tr>
+						<?php
+					}
+					$listBlobsOptions->setContinuationToken($result->getContinuationToken());
+				} while($result->getContinuationToken());
+				?>
+			</tbody>
+		</table>
     </body>
 </html>
 
