@@ -19,7 +19,6 @@ if (isset($_POST['submit'])) {
     //upload file
 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
-	// echo fread($content, filesize($fileToUpload));
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
 	header("Location: analyze.php");
 }
@@ -47,7 +46,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet"> -->
+    <!-- <link href="starter-template.css" rel="stylesheet"> --> 
   </head>
 <body>
 	<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -70,8 +69,12 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 				<p class="lead">Pilih Foto Kendaraan Anda.<br> Kemudian Click <b>Upload</b>, untuk menganlisa foto pilih <b>analyze</b> pada tabel.</p>
 				<span class="border-top my-3"></span>
 			</div> -->
-		<div class="mt-4 mb-2">
-			<form class="d-flex justify-content-lefr" action="analyze.php" method="post" enctype="multipart/form-data">
+        <div>
+            <a style="color:blue;" href="/index.php">Registration</a> |
+            <a style="color:white;" href="/upload.php">Upload</a>
+        </div>
+		<div>
+			<form class="d-flex justify-content-lefr" action="upload.php" method="post" enctype="multipart/form-data">
 				<input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
 				<input type="submit" name="submit" value="Upload">
 			</form>
