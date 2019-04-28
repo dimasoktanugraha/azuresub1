@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Analyze Image</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <!-- Bootstrap core CSS -->
     <!-- <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
@@ -19,7 +19,7 @@
 
 <h1>Analyze image:</h1>
  
-<script type="text/javascript">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
     function processImage() {
         // **********************************************
         // *** Update or verify the following values. ***
