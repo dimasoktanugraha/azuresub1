@@ -32,6 +32,8 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 <!DOCTYPE html>
 <html>
  <head>
+ <!-- Bootstrap core CSS -->
+ <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="padding: 20;">
 

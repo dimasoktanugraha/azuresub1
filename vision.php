@@ -15,6 +15,8 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Analyze Sample</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,6 +24,8 @@ if (isset($_POST['submit'])) {
         <a style="color:blue;" href="/index.php">Registration</a> |
         <a style="color:blue;" href="/upload.php">Upload</a>
     </div>
+
+<h1>Analyze image:</h1>
  
 <script type="text/javascript">
     // function processImage() {
@@ -88,23 +92,22 @@ if (isset($_POST['submit'])) {
     };
 </script>
  
-<h1>Analyze image:</h1>
-Enter the URL to an image, then click the <strong>Analyze image</strong> button.
-<br><br>
-Image to analyze:
-<!-- <input type="text" name="inputImage" id="inputImage"
-    value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
-<button onclick="processImage()">Analyze image</button> -->
-<!-- <br><br> -->
+// Enter the URL to an image, then click the <strong>Analyze image</strong> button.
+// <br><br>
+// Image to analyze:
+// <!-- <input type="text" name="inputImage" id="inputImage"
+//     value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
+// <button onclick="processImage()">Analyze image</button> -->
+// <!-- <br><br> -->
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
-        Response:
+        <b>Response:</b> 
         <br><br>
         <textarea id="responseTextArea" class="UIInput"
                   style="width:580px; height:400px;"></textarea>
     </div>
     <div id="imageDiv" style="width:420px; display:table-cell;">
-        Source image:
+        <b>Source image:</b> 
         <br><br>
         <img id="sourceImage" width="400" />
     </div>
