@@ -1,13 +1,14 @@
 <?php
-if (isset($_POST['submit'])) {
-	if (isset($_POST['url'])) {
-		$url = $_POST['url'];
-	} else {
-		header("Location: upload.php");
-	}
-} else {
-	header("Location: upload.php");
-}
+// if (isset($_POST['submit'])) {
+// 	if (isset($_POST['url'])) {
+// 		$url = $_POST['url'];
+// 	} else {
+// 		header("Location: upload.php");
+// 	}
+// } else {
+// 	header("Location: upload.php");
+// }
+    $url = $_GET['url'];
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +29,8 @@ if (isset($_POST['submit'])) {
 <h1>Analyze image:</h1>
  
 <script type="text/javascript">
-    // function processImage() {
-    $(document).ready(function () {
+    function processImage() {
+    // $(document).ready(function () {
         // **********************************************
         // *** Update or verify the following values. ***
         // **********************************************
@@ -92,13 +93,9 @@ if (isset($_POST['submit'])) {
     };
 </script>
  
-// Enter the URL to an image, then click the <strong>Analyze image</strong> button.
-// <br><br>
-// Image to analyze:
-// <!-- <input type="text" name="inputImage" id="inputImage"
-//     value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
-// <button onclick="processImage()">Analyze image</button> -->
-// <!-- <br><br> -->
+<br>
+<button onclick="processImage()">Analyze image</button>
+<br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
         <b>Response:</b> 
