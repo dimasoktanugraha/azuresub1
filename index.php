@@ -16,7 +16,7 @@
  </style>
  </head>
  <body>
-    <div>
+    <div style="background-color:grey;">
         <a style="color:white;" href="/index.php">Registration</a> |
         <a style="color:blue;" href="/upload.php">Upload</a>
     </div>

@@ -69,7 +69,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 				<p class="lead">Pilih Foto Kendaraan Anda.<br> Kemudian Click <b>Upload</b>, untuk menganlisa foto pilih <b>analyze</b> pada tabel.</p>
 				<span class="border-top my-3"></span>
 			</div> -->
-        <div>
+        <div style="background-color:grey;">
             <a style="color:blue;" href="/index.php">Registration</a> |
             <a style="color:white;" href="/upload.php">Upload</a>
         </div>
