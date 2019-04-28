@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 	$fileToUpload = strtolower($_FILES["fileToUpload"]["name"]);
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: analyze.php");
+	header("Location: upload.php");
 }
 
 //tampilkan list blob
@@ -70,14 +70,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 						<tr>
 							<td><?php echo $blob->getName() ?></td>
 							<td><?php echo $blob->getUrl() ?></td>
-							<td>
-								<!-- <form action="vision.php" method="post"> -->
-									<!-- <input type="hidden" name="url" value="<?php echo $blob->getUrl()?>"> -->
-									<!-- <input type="submit" name="submit" value="Analyze!"> -->
-								<!-- </form> --> -->
-                                <!-- <button onclick="processImage()">Analyze</button> -->
-                                <a href="vision.php?url=<?php echo $blob->getUrl()?>" class="btn btn-primary">Analize</a>
-													
+							<td><a href="vision.php?url=<?php echo $blob->getUrl()?>" class="btn btn-primary">Analize</a>					
                             </td>
 						</tr>
 						<?php
