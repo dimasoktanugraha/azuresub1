@@ -8,7 +8,7 @@
     <title>Analyze Image</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 
@@ -47,7 +47,8 @@
         };
  
         // Display the image.
-        var sourceImageUrl = "<?php echo $url ?>";
+		var sourceImageUrl = "https://dimassubstorage.blob.core.windows.net/blobdimas/chelseaislan.jpg";
+        //var sourceImageUrl = document.getElementById("inputImage").value;
         document.querySelector("#sourceImage").src = sourceImageUrl;
  
         // Make the REST API call.
