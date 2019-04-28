@@ -19,7 +19,7 @@
 
 <h1>Analyze image:</h1>
  
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+<script type="text/javascript">
     function processImage() {
         // **********************************************
         // *** Update or verify the following values. ***
