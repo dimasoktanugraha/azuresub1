@@ -7,9 +7,7 @@
 <head>
     <title>Analyze Image</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    
 </head>
 <body>
 
@@ -22,21 +20,9 @@
  
 <script type="text/javascript">
     function processImage() {
-        // **********************************************
-        // *** Update or verify the following values. ***
-        // **********************************************
- 
-        // Replace <Subscription Key> with your valid subscription key.
+
         var subscriptionKey = "da4f0cd6af6645bc930bc392c2bf0c61";
  
-        // You must use the same Azure region in your REST API method as you used to
-        // get your subscription keys. For example, if you got your subscription keys
-        // from the West US region, replace "westcentralus" in the URL
-        // below with "westus".
-        //
-        // Free trial subscription keys are generated in the "westus" region.
-        // If you use a free trial subscription key, you shouldn't need to change
-        // this region.
         var uriBase =
             "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
  
@@ -72,6 +58,7 @@
         .done(function(data) {
             // Show formatted JSON on webpage.
             $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            $("#description").text(data.description.captions[0].text);
         })
  
         .fail(function(jqXHR, textStatus, errorThrown) {
@@ -99,6 +86,8 @@
         <b>Source image:</b> 
         <br><br>
         <img id="sourceImage" width="400" />
+        <br>
+		<h3 id="description">Loading description. . .</h3>
     </div>
 </div>
 </body>
