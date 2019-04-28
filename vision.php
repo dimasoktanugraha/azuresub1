@@ -1,20 +1,11 @@
 <?php
-// if (isset($_POST['submit'])) {
-// 	if (isset($_POST['url'])) {
-// 		$url = $_POST['url'];
-// 	} else {
-// 		header("Location: upload.php");
-// 	}
-// } else {
-// 	header("Location: upload.php");
-// }
     $url = $_GET['url'];
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Analyze Sample</title>
+    <title>Analyze Image</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +21,6 @@
  
 <script type="text/javascript">
     function processImage() {
-    // $(document).ready(function () {
         // **********************************************
         // *** Update or verify the following values. ***
         // **********************************************
@@ -95,7 +85,7 @@
  
 <br>
 <button onclick="processImage()">Analyze image</button>
-<br>
+<br><br>
 <div id="wrapper" style="width:1020px; display:table;">
     <div id="jsonOutput" style="width:600px; display:table-cell;">
         <b>Response:</b> 
