@@ -3,7 +3,7 @@
  <Title>Registration Form</Title>
  <style type="text/css">
  	body { background-color: #fff; border-top: solid 10px #000;
- 	    color: #333; font-size: .85em; margin: 20; padding: 20;
+ 	    color: #333; font-size: .85em; padding: 20;
  	    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
  	}
  	h1, h2, h3,{ color: #000; margin-bottom: 0; padding-bottom: 0; }
@@ -16,7 +16,7 @@
  </style>
  </head>
  <body>
-    <div style="background-color:grey;">
+    <div style="background-color:grey; padding: 20;">
         <a style="color:white;" href="/index.php">Registration</a> |
         <a style="color:blue;" href="/upload.php">Upload</a>
     </div>

@@ -48,7 +48,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> --> 
   </head>
-<body>
+<body style="padding: 20;">
 	<!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 				<p class="lead">Pilih Foto Kendaraan Anda.<br> Kemudian Click <b>Upload</b>, untuk menganlisa foto pilih <b>analyze</b> pada tabel.</p>
 				<span class="border-top my-3"></span>
 			</div> -->
-        <div style="background-color:grey;">
+        <div style="background-color:grey; padding: 20;">
             <a style="color:blue;" href="/index.php">Registration</a> |
             <a style="color:white;" href="/upload.php">Upload</a>
         </div>
