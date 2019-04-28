@@ -70,7 +70,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 						<tr>
 							<td><?php echo $blob->getName() ?></td>
 							<td><?php echo $blob->getUrl() ?></td>
-							<td><a href="vision.php?url=<?php echo $blob->getUrl()?>" class="btn btn-primary">Analize</a>					
+							<td><a href="vision.html?url=<?php echo $blob->getUrl()?>" class="btn btn-primary">Analize</a>					
                             </td>
 						</tr>
 						<?php
